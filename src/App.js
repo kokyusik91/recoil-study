@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { RecoilRoot, atom} from 'recoil';
+
+import CharacterCounter from './basic/CharacterCounter';
+import TodoList from './todos/TodoList';
+
+
+export const initialState = {
+  textState : atom({
+     key: 'textState', // unique ID (with respect to other atoms/selectors)
+    default: '입력값',
+  }),
+
+  modalState : atom({
+    key : 'modalState',
+    default : false
+  }),
+
+  todoListState : atom({
+    key : 'todoListState',
+    default : []
+  })
+}
+
+
+
 
 function App() {
+    
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RecoilRoot>
+      <TodoList/>
+        {/* <CharacterCounter/> */}
+    </RecoilRoot>
   );
 }
 
