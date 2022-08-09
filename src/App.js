@@ -1,6 +1,5 @@
 import { RecoilRoot, atom} from 'recoil';
 
-import CharacterCounter from './basic/CharacterCounter';
 import TodoList from './todos/TodoList';
 
 
